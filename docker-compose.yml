@@ -69,7 +69,7 @@ x-shared:
       LETSENCRYPT_HOST:
       LETSENCRYPT_EMAIL:
 
-    image: ${IMAGE_REPO:-ghcr.io/zammad/zammad}:${VERSION:-7.0.0-0042}
+    image: ${IMAGE_REPO:-ghcr.io/zammad/zammad}:${VERSION:-7.0.0-0058}
     restart: ${RESTART:-always}
     volumes:
       - zammad-backup:/var/tmp/zammad:ro  # needed for waiting on restore operations
@@ -136,7 +136,7 @@ services:
     command: ["zammad-railsserver"]
 
   zammad-redis:
-    image: redis:${REDIS_VERSION:-8.6.1-alpine}
+    image: redis:${REDIS_VERSION:-8.6.2-alpine}
     restart: ${RESTART:-always}
     volumes:
       - redis-data:/data
